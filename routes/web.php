@@ -1,0 +1,45 @@
+<?php
+
+use App\Http\Controllers\{
+    ExploreController,
+    HomeController
+};
+use Spark\Facades\Route;
+
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/{type}/genre/{slug}', [ExploreController::class, 'genre'])
+    ->name('genre');
+
+Route::get('/{type}/language/{language}', [ExploreController::class, 'language'])
+    ->name('language');
+
+Route::get('/{type}/country/{country}', [ExploreController::class, 'country'])
+    ->name('country');
+
+Route::get('/{type}/company/{slug}', [ExploreController::class, 'company'])
+    ->name('company');
+
+Route::get('/{type}/network/{slug}', [ExploreController::class, 'network'])
+    ->name('network');
+
+Route::get('/people/{slug}', [ExploreController::class, 'people'])
+    ->name('people');
+
+Route::get('/movie/{slug?}', [HomeController::class, 'movie'])
+    ->name('movie');
+
+Route::get('/tv/{slug?}', [HomeController::class, 'tv'])
+    ->name('tv');
+
+Route::fireline('/watchlist', 'watchlater')
+    ->name('watchlist');
+
+Route::get('/api', [HomeController::class, 'api'])
+    ->name('api');
+
+Route::post('/search', [HomeController::class, 'search'])
+    ->name('search');
+
+Route::get('/embed/{type}/{id}', [HomeController::class, 'embed'])
+    ->name('embed');
