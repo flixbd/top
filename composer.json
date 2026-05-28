@@ -1,0 +1,29 @@
+{
+    "name": "tinymvc/skeleton",
+    "type": "project",
+    "description": "TinyMvc is a minimalist PHP framework to craft blazing-fast RESTful APIs and modern web apps.",
+    "keywords": ["shahinmoyshan", "tinymvc", "tinycore", "mvc", "web framework", "php framework", "framework"],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "tinymvc/tinycore": "^2.2",
+        "voku/portable-ascii": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "Shahin Moyshan",
+            "email": "shahin.moyshan2@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app"
+        },
+        "files": [
+            "./bootstrap/helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
